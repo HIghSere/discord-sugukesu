@@ -5,6 +5,10 @@ const client = new Client({
 });
 const prefix = config.prefix;
 
+client.once("ready", () => {
+    console.log("logged in as: ", client.user.id);
+});
+
 client.on("messageCreate", async (message) => {
     const args = message.content.slice(prefix.length).trim().split(/ +/g);
     const command = args.shift().toLowerCase();
