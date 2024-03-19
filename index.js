@@ -3,7 +3,7 @@ const config = require("./config");
 const client = new Client({
     checkUpdate: false,
 });
-const prefix = "c<";
+const prefix = config.prefix;
 
 client.on("messageCreate", async (message) => {
     const args = message.content.slice(prefix.length).trim().split(/ +/g);
